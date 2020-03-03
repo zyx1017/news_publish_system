@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.CategoryDao">
+	<!--查询新闻类别集合列表 -->
+	<select id="selectCategoryList" resultType="Category">
+		select * from t_category 
+	</select>
+	<!--通过categoryId查询新闻类别 -->
+	<select id="getCategoryById" parameterType="Integer" resultType="Category">
+		select * from t_category where categoryId=#{categoryId}
+	</select>
+	<!-- 修改分类信息 -->
+	<update id="updateCategory" parameterType="Category">
+		update t_category
+		<set>
+			categoryName=#{categoryName}
+		</set>
+		where categoryId = #{categoryId}
+	</update>
+
+	<!-- 删除分类信息 -->
+	<update id="updateCategorytoNews" parameterType="int">
+		update t_news set categoryId = 0 where categoryId = #{categoryId}
+	</update>
+	<delete id="delCategory" parameterType="int">
+		delete from t_category where categoryId = #{categoryId}
+	</delete>
+	
+	<!-- 增加分类 -->
+	<insert id="addCategory" parameterType="Category" >
+		<selectKey keyProperty="categoryId" order="BEFORE" resultType="int">
+			SELECT if(max(categoryId) is null, 1, max(categoryId)+1) as newId from t_category
+		</selectKey>
+		insert into t_category(categoryId,categoryName) values(#{categoryId},#{categoryName})
+	</insert>
+</mapper>

@@ -1,0 +1,9 @@
+com\ssm\service\UserService.class
+com\ssm\service\CategoryService.class
+com\ssm\service\impl\RoleServiceImpl.class
+com\ssm\service\impl\NewsServiceImpl.class
+com\ssm\service\RoleService.class
+com\ssm\utils\PageBean.class
+com\ssm\service\impl\UserServiceImpl.class
+com\ssm\service\NewsService.class
+com\ssm\service\impl\CategoryServiceImpl.class

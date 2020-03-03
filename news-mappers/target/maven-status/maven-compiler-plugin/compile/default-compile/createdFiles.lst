@@ -1,0 +1,4 @@
+com\ssm\dao\CategoryDao.class
+com\ssm\dao\UserDao.class
+com\ssm\dao\NewsDao.class
+com\ssm\dao\RoleDao.class

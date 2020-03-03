@@ -1,0 +1,6 @@
+com\ssm\controller\NewsController.class
+com\ssm\controller\CategoryController.class
+com\ssm\controller\CommonController.class
+com\ssm\controller\RoleController.class
+com\ssm\controller\UserController.class
+com\ssm\interceptor\LoginInterceptor.class
